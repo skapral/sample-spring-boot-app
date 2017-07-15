@@ -21,28 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package sample.spring.boot.app;
+package sample.spring.boot.app.repos;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import sample.spring.boot.app.data.UserDO;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author Kapralov Sergey
  */
-@org.springframework.stereotype.Controller
-@EnableAutoConfiguration
-public class Controller {
-
-    @RequestMapping("/")
-    @ResponseBody
-    String home() {
-        return "Hello World!";
-    }
-
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(Controller.class, args);
-    }
+public interface UserRepository extends CrudRepository<UserDO, Integer> {
 }
